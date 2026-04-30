@@ -99,10 +99,10 @@ export default function TresoreriePage() {
                 <linearGradient id="cSolde" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={scenario === "pessimiste" ? "#ef4444" : "#3b82f6"} stopOpacity={0.3} /><stop offset="95%" stopColor={scenario === "pessimiste" ? "#ef4444" : "#3b82f6"} stopOpacity={0} /></linearGradient>
                 <linearGradient id="cEntrees" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#22c55e" stopOpacity={0.2} /><stop offset="95%" stopColor="#22c55e" stopOpacity={0} /></linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
               <XAxis dataKey="month" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
               <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
-              <Tooltip contentStyle={{ backgroundColor: "rgba(17,24,39,0.95)", borderColor: "#1f2937", borderRadius: "8px" }} formatter={(v) => [`${Number(v).toLocaleString()} $`, ""]} />
+              <Tooltip contentStyle={{ backgroundColor: "#ffffff", borderColor: "#e2e8f0", borderRadius: "8px", color: "#0f172a" }} formatter={(v) => [`${Number(v).toLocaleString()} $`, ""]} />
               <Legend iconType="circle" wrapperStyle={{ fontSize: "12px", paddingTop: "10px" }} />
               <Area type="monotone" dataKey="entrees" name="Entrées" stroke="#22c55e" fillOpacity={1} fill="url(#cEntrees)" />
               <Area type="monotone" dataKey="sorties" name="Sorties" stroke="#ef4444" fillOpacity={0} fill="none" strokeDasharray="5 5" />

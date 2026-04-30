@@ -20,33 +20,20 @@
 }
 
 :root {
-  --background: #f8fafc;
-  --foreground: #020617;
+  /* Clean Light Theme */
+  --background: #f1f5f9; /* Slate-100 for better contrast with white cards */
+  --foreground: #0f172a; /* Slate-900 */
   --card: #ffffff;
-  --card-foreground: #020617;
-  --border: #e2e8f0;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --primary: #0052cc; /* Synchro IA Deep Blue */
+  --card-foreground: #0f172a;
+  --border: #e2e8f0; /* Slate-200 */
+  --muted: #f8fafc; /* Slate-50 */
+  --muted-foreground: #64748b; /* Slate-500 */
+  --primary: #005eff; /* Synchro IA Blue */
   --primary-foreground: #ffffff;
-  --accent: #dbeafe;
-  --accent-foreground: #1e3a8a;
+  --accent: #eff6ff; /* Blue-50 */
+  --accent-foreground: #1d4ed8; /* Blue-700 */
   
-  --radius: 0.5rem;
-}
-
-.dark {
-  --background: #0B0F19; /* Deep tech blue/slate */
-  --foreground: #f8fafc;
-  --card: #111827;
-  --card-foreground: #f8fafc;
-  --border: #1f2937;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --primary: #3b82f6; /* Lighter blue for dark mode */
-  --primary-foreground: #ffffff;
-  --accent: #1e3a8a;
-  --accent-foreground: #dbeafe;
+  --radius: 0.75rem;
 }
 
 body {
@@ -56,17 +43,20 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Glassmorphism Utilities */
+/* Glassmorphism Utilities - Light Mode Optimized */
 .glass {
-  background: rgba(17, 24, 39, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
 }
 
-@media (prefers-color-scheme: light) {
-  .glass {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-  }
+/* Recharts customization for light mode */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #e2e8f0;
+}
+.recharts-text {
+  fill: #64748b;
 }

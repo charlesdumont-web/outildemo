@@ -44,6 +44,7 @@ import {
   Truck,
   Building2,
 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
 
@@ -169,27 +170,20 @@ export function Sidebar() {
   return (
     <aside
       className={clsx(
-        "bg-card border-r border-border flex flex-col transition-all duration-300 relative shrink-0",
+        "bg-[#0b1120] text-slate-300 border-r border-slate-800 flex flex-col transition-all duration-300 relative shrink-0",
         collapsed ? "w-[68px]" : "w-64"
       )}
     >
       {/* Logo */}
-      <div className="h-16 flex items-center justify-between px-4 border-b border-border shrink-0">
+      <div className="h-16 flex items-center justify-between px-4 border-b border-slate-800 shrink-0">
         {!collapsed && (
           <div className="flex items-center gap-2 overflow-hidden">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg shadow-blue-500/20">
-              S
-            </div>
-            <span className="font-bold text-lg whitespace-nowrap text-foreground tracking-tight">
-              Synchro <span className="text-primary">IA</span>
-            </span>
+            <Image src="/logo.png" alt="Synchro IA" width={140} height={40} className="object-contain" priority />
           </div>
         )}
         {collapsed && (
           <div className="w-full flex justify-center">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-500/20">
-              S
-            </div>
+            <Image src="/logo.png" alt="S" width={32} height={32} className="object-cover object-left w-8 h-8" priority />
           </div>
         )}
       </div>
@@ -197,7 +191,7 @@ export function Sidebar() {
       {/* Collapse button */}
       <button
         onClick={() => setCollapsed(!collapsed)}
-        className="absolute -right-3 top-20 bg-card border border-border rounded-full p-1 text-muted-foreground hover:text-foreground hover:bg-muted z-20 shadow-sm"
+        className="absolute -right-3 top-20 bg-slate-800 border border-slate-700 rounded-full p-1 text-slate-400 hover:text-white hover:bg-slate-700 z-20 shadow-sm"
       >
         {collapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
       </button>
@@ -218,7 +212,7 @@ export function Sidebar() {
                   onClick={() => toggleGroup(group.title)}
                   className={clsx(
                     "w-full flex items-center justify-between px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors",
-                    hasActiveLink ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                    hasActiveLink ? "text-white" : "text-slate-500 hover:text-slate-300"
                   )}
                 >
                   <span>{group.title}</span>
@@ -229,7 +223,7 @@ export function Sidebar() {
                 </button>
               ) : (
                 <div className="flex justify-center py-2">
-                  <GroupIcon size={16} className={hasActiveLink ? "text-primary" : "text-muted-foreground"} />
+                  <GroupIcon size={16} className={hasActiveLink ? "text-primary" : "text-slate-500"} />
                 </div>
               )}
 
@@ -246,8 +240,8 @@ export function Sidebar() {
                           className={clsx(
                             "flex items-center gap-2.5 px-2.5 py-1.5 rounded-md transition-all text-[13px]",
                             isActive
-                              ? "bg-primary text-primary-foreground shadow-sm shadow-primary/20"
-                              : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                              ? "bg-primary text-white shadow-sm shadow-primary/20"
+                              : "text-slate-400 hover:bg-slate-800/50 hover:text-white"
                           )}
                           title={collapsed ? link.name : undefined}
                         >
@@ -285,13 +279,13 @@ export function Sidebar() {
       </div>
 
       {/* User */}
-      <div className="p-3 border-t border-border shrink-0">
+      <div className="p-3 border-t border-slate-800 shrink-0">
         {!collapsed ? (
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex-shrink-0 shadow-sm" />
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex-shrink-0 shadow-sm" />
             <div className="overflow-hidden">
-              <p className="text-sm font-medium text-foreground truncate">Admin</p>
-              <p className="text-[11px] text-muted-foreground truncate">admin@synchro-ia.com</p>
+              <p className="text-sm font-medium text-slate-200 truncate">Admin</p>
+              <p className="text-[11px] text-slate-500 truncate">admin@synchro-ia.com</p>
             </div>
           </div>
         ) : (

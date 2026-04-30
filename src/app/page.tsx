@@ -23,22 +23,22 @@ import {
 
 const revenueData = [
   { name: 'Jan', revenue: 4000, expenses: 2400 },
-  { name: 'Feb', revenue: 3000, expenses: 1398 },
+  { name: 'Fév', revenue: 3000, expenses: 1398 },
   { name: 'Mar', revenue: 2000, expenses: 9800 },
-  { name: 'Apr', revenue: 2780, expenses: 3908 },
-  { name: 'May', revenue: 1890, expenses: 4800 },
-  { name: 'Jun', revenue: 2390, expenses: 3800 },
-  { name: 'Jul', revenue: 3490, expenses: 4300 },
+  { name: 'Avr', revenue: 2780, expenses: 3908 },
+  { name: 'Mai', revenue: 1890, expenses: 4800 },
+  { name: 'Juin', revenue: 2390, expenses: 3800 },
+  { name: 'Juil', revenue: 3490, expenses: 4300 },
 ];
 
 const aiActivityData = [
-  { name: 'Mon', email: 40, sms: 24 },
-  { name: 'Tue', email: 30, sms: 13 },
-  { name: 'Wed', email: 20, sms: 98 },
-  { name: 'Thu', email: 27, sms: 39 },
-  { name: 'Fri', email: 18, sms: 48 },
-  { name: 'Sat', email: 23, sms: 38 },
-  { name: 'Sun', email: 34, sms: 43 },
+  { name: 'Lun', email: 40, sms: 24 },
+  { name: 'Mar', email: 30, sms: 13 },
+  { name: 'Mer', email: 20, sms: 98 },
+  { name: 'Jeu', email: 27, sms: 39 },
+  { name: 'Ven', email: 18, sms: 48 },
+  { name: 'Sam', email: 23, sms: 38 },
+  { name: 'Dim', email: 34, sms: 43 },
 ];
 
 export default function Dashboard() {
@@ -46,15 +46,15 @@ export default function Dashboard() {
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Dashboard overview</h1>
-          <p className="text-muted-foreground mt-1">Welcome back, here is what's happening today.</p>
+          <h1 className="text-3xl font-bold tracking-tight">Aperçu du tableau de bord</h1>
+          <p className="text-muted-foreground mt-1">De retour, voici ce qui se passe aujourd'hui.</p>
         </div>
         <div className="flex gap-3">
           <button className="px-4 py-2 border border-border bg-card hover:bg-muted text-foreground rounded-md text-sm font-medium transition-colors">
-            Download Report
+            Télécharger le rapport
           </button>
           <button className="px-4 py-2 bg-primary hover:bg-blue-600 text-primary-foreground rounded-md text-sm font-medium transition-colors shadow-sm shadow-primary/20">
-            Generate AI Insight
+            Générer une analyse IA
           </button>
         </div>
       </div>
@@ -62,10 +62,10 @@ export default function Dashboard() {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { title: "Total Revenue", value: "$45,231.89", trend: "+20.1%", isUp: true, icon: TrendingUp, color: "text-green-500" },
-          { title: "Active Prospects", value: "2,350", trend: "+15.2%", isUp: true, icon: Users, color: "text-blue-500" },
-          { title: "AI Tasks Automated", value: "12,234", trend: "+54.3%", isUp: true, icon: Bot, color: "text-purple-500" },
-          { title: "Outstanding Payables", value: "$12,450.00", trend: "-4.5%", isUp: false, icon: CreditCard, color: "text-orange-500" },
+          { title: "Revenus totaux", value: "45 231,89 $", trend: "+20.1%", isUp: true, icon: TrendingUp, color: "text-green-500" },
+          { title: "Prospects actifs", value: "2 350", trend: "+15.2%", isUp: true, icon: Users, color: "text-blue-500" },
+          { title: "Tâches IA automatisées", value: "12 234", trend: "+54.3%", isUp: true, icon: Bot, color: "text-purple-500" },
+          { title: "Comptes payables", value: "12 450,00 $", trend: "-4.5%", isUp: false, icon: CreditCard, color: "text-orange-500" },
         ].map((kpi, i) => (
           <div key={i} className="glass rounded-xl p-6 relative overflow-hidden group hover:border-primary/50 transition-all">
             <div className="flex justify-between items-start mb-4">
@@ -82,7 +82,7 @@ export default function Dashboard() {
                 {kpi.isUp ? <ArrowUpRight size={16} className="mr-1" /> : <ArrowDownRight size={16} className="mr-1" />}
                 {kpi.trend}
               </span>
-              <span className="text-muted-foreground ml-2">vs last month</span>
+              <span className="text-muted-foreground ml-2">vs mois dernier</span>
             </div>
             {/* Subtle glow effect on hover */}
             <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm pointer-events-none" />
@@ -94,8 +94,8 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="glass rounded-xl p-6 border border-border">
           <div className="mb-4">
-            <h3 className="text-lg font-semibold">Financial Overview</h3>
-            <p className="text-sm text-muted-foreground">Revenue vs Expenses over the last 7 months</p>
+            <h3 className="text-lg font-semibold">Aperçu financier</h3>
+            <p className="text-sm text-muted-foreground">Revenus vs Dépenses sur les 7 derniers mois</p>
           </div>
           <div className="h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
@@ -112,10 +112,10 @@ export default function Dashboard() {
                 </defs>
                 <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
                 <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: 'rgba(17, 24, 39, 0.9)', borderColor: '#1f2937', borderRadius: '8px' }}
-                  itemStyle={{ color: '#e2e8f0' }}
+                  contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '8px', color: '#0f172a' }}
+                  itemStyle={{ color: '#0f172a' }}
                 />
                 <Area type="monotone" dataKey="revenue" stroke="#2563eb" fillOpacity={1} fill="url(#colorRev)" />
                 <Area type="monotone" dataKey="expenses" stroke="#ef4444" fillOpacity={1} fill="url(#colorExp)" />
@@ -126,22 +126,22 @@ export default function Dashboard() {
 
         <div className="glass rounded-xl p-6 border border-border">
           <div className="mb-4">
-            <h3 className="text-lg font-semibold">AI Agents Activity</h3>
-            <p className="text-sm text-muted-foreground">Automated interactions handled by Synchro IA</p>
+            <h3 className="text-lg font-semibold">Activité des agents IA</h3>
+            <p className="text-sm text-muted-foreground">Interactions automatisées gérées par Synchro IA</p>
           </div>
           <div className="h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={aiActivityData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
                 <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
                 <Tooltip 
-                  cursor={{fill: 'rgba(255,255,255,0.05)'}}
-                  contentStyle={{ backgroundColor: 'rgba(17, 24, 39, 0.9)', borderColor: '#1f2937', borderRadius: '8px' }}
+                  cursor={{fill: 'rgba(0,0,0,0.05)'}}
+                  contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '8px', color: '#0f172a' }}
                 />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-                <Bar dataKey="email" name="Email Drafts" fill="#8b5cf6" radius={[4, 4, 0, 0]} barSize={20} />
-                <Bar dataKey="sms" name="SMS Handled" fill="#3b82f6" radius={[4, 4, 0, 0]} barSize={20} />
+                <Bar dataKey="email" name="Brouillons courriel" fill="#8b5cf6" radius={[4, 4, 0, 0]} barSize={20} />
+                <Bar dataKey="sms" name="SMS traités" fill="#3b82f6" radius={[4, 4, 0, 0]} barSize={20} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -151,25 +151,25 @@ export default function Dashboard() {
       {/* Recent Activity Table (Preview) */}
       <div className="glass rounded-xl border border-border overflow-hidden">
         <div className="p-6 border-b border-border flex justify-between items-center">
-          <h3 className="text-lg font-semibold">Recent System Activity</h3>
-          <button className="text-sm text-primary hover:text-blue-400 font-medium">View All</button>
+          <h3 className="text-lg font-semibold">Activité récente du système</h3>
+          <button className="text-sm text-primary hover:text-primary/80 font-medium">Tout voir</button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm text-left">
             <thead className="text-xs text-muted-foreground uppercase bg-muted/30">
               <tr>
-                <th className="px-6 py-3 font-medium">Event</th>
-                <th className="px-6 py-3 font-medium">Agent / User</th>
-                <th className="px-6 py-3 font-medium">Status</th>
-                <th className="px-6 py-3 font-medium text-right">Time</th>
+                <th className="px-6 py-3 font-medium">Événement</th>
+                <th className="px-6 py-3 font-medium">Agent / Utilisateur</th>
+                <th className="px-6 py-3 font-medium">Statut</th>
+                <th className="px-6 py-3 font-medium text-right">Heure</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {[
-                { event: "Demo Scheduled", user: "AI SMS Setter", status: "Success", time: "2 mins ago", type: "success" },
-                { event: "Purchase Order #PO-492", user: "Admin", status: "Approved", time: "1 hour ago", type: "success" },
-                { event: "Incoming Supplier Shipment", user: "System", status: "Pending", time: "3 hours ago", type: "warning" },
-                { event: "Email Draft Review", user: "AI Email Responder", status: "Action Required", time: "5 hours ago", type: "error" },
+                { event: "Démo planifiée", user: "IA SMS Setter", status: "Succès", time: "Il y a 2 min", type: "success" },
+                { event: "Bon de commande #BC-492", user: "Admin", status: "Approuvé", time: "Il y a 1 heure", type: "success" },
+                { event: "Réception fournisseur", user: "Système", status: "En attente", time: "Il y a 3 heures", type: "warning" },
+                { event: "Révision brouillon courriel", user: "IA Courriel", status: "Action requise", time: "Il y a 5 heures", type: "error" },
               ].map((row, i) => (
                 <tr key={i} className="hover:bg-muted/30 transition-colors">
                   <td className="px-6 py-4 font-medium text-foreground">{row.event}</td>

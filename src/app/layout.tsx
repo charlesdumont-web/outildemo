@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Synchro IA | Internal Platform",
-  description: "Demonstration platform for Synchro IA services",
+  title: "Synchro IA | Plateforme de Démonstration",
+  description: "Plateforme de démonstration des services Synchro IA",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="h-full flex overflow-hidden">
         <Sidebar />

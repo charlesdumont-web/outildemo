@@ -48,7 +48,7 @@ export default function PurchaseOrders() {
             <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
             <input 
               type="text" 
-              placeholder="Search PO number or supplier..." 
+              placeholder="Rechercher un numéro de BC ou fournisseur..."
               className="w-full bg-background border border-border rounded-md pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}

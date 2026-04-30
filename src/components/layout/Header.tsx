@@ -10,10 +10,6 @@ export function Header() {
     // Check initial preference
     if (document.documentElement.classList.contains("dark")) {
       setIsDark(true);
-    } else {
-      // For demo purposes, let's default to dark mode for that premium feel
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
     }
   }, []);
 
@@ -33,7 +29,7 @@ export function Header() {
         <Search size={18} className="text-muted-foreground mr-2" />
         <input 
           type="text" 
-          placeholder="Search modules, POs, or prospects..." 
+          placeholder="Rechercher des modules, BC ou prospects..." 
           className="bg-transparent border-none outline-none w-full text-sm text-foreground placeholder:text-muted-foreground"
         />
         <div className="flex items-center gap-1 ml-2">
@@ -45,7 +41,7 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div className="hidden md:flex items-center gap-2 mr-4 text-sm font-medium text-muted-foreground">
           <span className="w-2 h-2 rounded-full bg-green-500"></span>
-          System Operational
+          Système opérationnel
         </div>
         
         <button 
